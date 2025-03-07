@@ -3,102 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Cash Flow Audit - Optimize Your Business</title>
+    <title>AI-Enhanced CFO Services</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #121212;
-            text-align: center;
-            color: #e0e0e0;
+            font-family: 'Arial', sans-serif;
         }
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
-            background: #1e1e1e;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
+        .hero {
+            background-color: #f8f9fa;
+            padding: 100px 0;
         }
-        h1 {
-            color: #ffffff;
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #0d6efd;
+            margin-bottom: 1rem;
         }
-        p {
-            color: #b0b0b0;
-        }
-        .cta-button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 20px;
-            background: #007BFF;
+        .footer {
+            background-color: #343a40;
             color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        .cta-button:hover {
-            background: #0056b3;
-        }
-        .email-form {
-            margin-top: 20px;
-        }
-        input[type="email"] {
-            padding: 10px;
-            width: 80%;
-            border: 1px solid #444;
-            background: #262626;
-            color: #e0e0e0;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-        button {
-            padding: 10px 20px;
-            background: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background: #218838;
-        }
-        #confirmation {
-            display: none;
-            color: #28a745;
-            margin-top: 20px;
+            padding: 30px 0;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Get a Free Cash Flow Audit</h1>
-        <p>Struggling with cash flow? We'll analyze your business finances and provide actionable insights to improve your cash flow – for free.</p>
-        <form class="email-form" action="https://docs.google.com/forms/d/e/1FAIpQLScW_eufAZpATUk1i9-2ttCKoEI23WFHm-VC2HNvS1T5GvvoGQ/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
-            <input type="email" name="entry.1971639376" placeholder="Enter your email" required aria-label="Email address">
-            <button type="submit">Get My Free Audit</button>
-        </form>
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-        <div id="confirmation">Thanks! We'll be in touch shortly.</div>
-        <p>Your information is safe with us. No spam, just expert financial advice.</p>
-    </div>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">AI-CFO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#benefits">Benefits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white" href="#interest-form">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <script>
-        var submitted = false;
-        var form = document.querySelector('.email-form');
-        var confirmation = document.getElementById('confirmation');
-        
-        form.addEventListener('submit', function(e) {
-            if (submitted) {
-                e.preventDefault();
-                return;
-            }
-            
-            form.style.display = 'none';
-            confirmation.style.display = 'block';
-            submitted = true;
-        });
-    </script>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">AI-Enhanced CFO Services for Your Business</h1>
+                    <p class="lead mb-4">Leverage cutting-edge AI technology and expert financial guidance to optimize your business finances, reduce costs, and drive growth.</p>
+                    <a href="#interest-form" class="btn btn-primary btn-lg">Get Early Access</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://via.placeholder.com/600x400" alt="AI CFO Services" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our AI-Powered Financial Services</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="feature-icon">📊</div>
+                            <h3 class="card-title">Real-time Financial Analysis</h3>
+                            <p class="card-text">Get instant insights into your financial health with AI-driven analytics that process data in real-time.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="feature-icon">🔮</div>
+                            <h3 class="card-title">Predictive Forecasting</h3>
+                            <p class="card-text">Leverage machine learning to predict future financial trends and prepare your business accordingly.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="feature-icon">💰</div>
+                            <h3 class="card-title">Cost Optimization</h3>
+                            <p class="card-text">Identify savings opportunities and optimize expenses with AI-powered recommendations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Why Choose Our AI-CFO Services</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="d-flex align-items-start">
+                        <div class="flex-shrink-0 me-3">
+                            <span class="text-primary fw-bold display-6">01</span>
+                        </div>
+                        <div>
+                            <h3>Expert Financial Guidance + AI Precision</h3>
+                            <p class="lead">Combine human expertise with AI capabilities for unparalleled financial management.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="d-flex align-items-start">
+                        <div class="flex-shrink-0 me-3">
+                            <span class="text-primary fw-bold display-6">02</span>
+                        </div>
+                        <div>
+                            <h3>Scalable Solutions for Any Business Size</h3>
+                            <p class="lead">Our services adapt to your business needs, whether you're a startup or established enterprise.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="d-flex align-items-start">
+                        <div class="flex-shrink-0 me-3">
+                            <span class="text-primary fw-bold display-6">03</span>
+                        </div>
+                        <div>
+                            <h3>Time & Cost Savings</h3>
+                            <p class="lead">Reduce the need for large financial teams while gaining enhanced insights and capabilities.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="d-flex align-items-start">
+                        <div class="flex-shrink-0 me-3">
+                            <span class="text-primary fw-bold display-6">04</span>
+                        </div>
+                        <div>
+                            <h3>Data-Driven Decision Making</h3>
+                            <p class="lead">Make confident business decisions backed by comprehensive financial analysis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section - UPDATED WITH FORMSPREE -->
+    <section id="interest-form" class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4">Interested in AI-Enhanced CFO Services?</h3>
+                        
+                        <!-- Form with Formspree integration -->
+                        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="company" class="form-label">Company (Optional)</label>
+                                <input type="text" class="form-control" id="company" name="company">
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>AI-CFO Services</h4>
+                    <p>Transforming financial management with artificial intelligence.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>© 2023 AI-CFO Services. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
