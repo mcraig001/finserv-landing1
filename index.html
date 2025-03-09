@@ -25,9 +25,73 @@
             color: white;
             padding: 30px 0;
         }
+        
+        /* Popup Modal Styles */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .popup-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+        
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #6c757d;
+        }
+        
+        .popup-close:hover {
+            color: #343a40;
+        }
     </style>
 </head>
 <body>
+    <!-- Popup Modal -->
+    <div class="popup-overlay" id="emailPopup">
+        <div class="popup-content shadow">
+            <span class="popup-close" id="closePopup">&times;</span>
+            <h3 class="text-center mb-3">Get Your Free Cash Flow Analysis</h3>
+            <p class="text-center mb-4">Enter your information below to receive a complimentary analysis of your business cash flow.</p>
+            
+            <!-- Popup Form with Formspree -->
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="mb-3">
+                    <label for="popup-name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="popup-name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="popup-email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="popup-email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="popup-company" class="form-label">Company (Optional)</label>
+                    <input type="text" class="form-control" id="popup-company" name="company">
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg">Get My Free Analysis</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div class="container">
@@ -205,5 +269,54 @@
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Popup JavaScript -->
+    <script>
+        // Wait for the page to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the popup elements
+            const popup = document.getElementById('emailPopup');
+            const closeBtn = document.getElementById('closePopup');
+            
+            // Show popup after 3 seconds
+            setTimeout(function() {
+                popup.style.display = 'flex';
+            }, 3000);
+            
+            // Close popup when X is clicked
+            closeBtn.addEventListener('click', function() {
+                popup.style.display = 'none';
+            });
+            
+            // Close popup when clicking outside the content
+            popup.addEventListener('click', function(e) {
+                if (e.target === popup) {
+                    popup.style.display = 'none';
+                }
+            });
+            
+            // Store a cookie to prevent showing popup again in same session
+            function setCookie(name, value, days) {
+                let expires = "";
+                if (days) {
+                    const date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    expires = "; expires=" + date.toUTCString();
+                }
+                document.cookie = name + "=" + (value || "") + expires + "; path=/";
+            }
+            
+            function getCookie(name) {
+                const nameEQ = name + "=";
+                const ca = document.cookie.split(';');
+                for (let i = 0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+            }
+        });
+    </script>
 </body>
 </html>
