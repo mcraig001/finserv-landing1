@@ -3,27 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Enhanced CFO Services</title>
+    <title>AURIFLOW | Strategic Finance Intelligence</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <!-- Custom CSS -->
     <style>
+        /* Core styles inspired by Steve Jobs' design philosophy */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #333;
+            line-height: 1.5;
         }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 500;
+        }
+        
+        .display-4 {
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+        
+        /* Hero section */
         .hero {
+            background-color: #ffffff;
+            padding: 120px 0;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Component styling */
+        .btn-primary {
+            background-color: #007AFF;
+            border-color: #007AFF;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0062CC;
+            border-color: #0062CC;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 122, 255, 0.15);
+        }
+        
+        .btn-outline-secondary {
+            color: #333;
+            border-color: #ddd;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-weight: 500;
+        }
+        
+        .btn-outline-secondary:hover {
             background-color: #f8f9fa;
-            padding: 100px 0;
+            color: #111;
+            border-color: #ccc;
         }
-        .feature-icon {
+        
+        .text-primary {
+            color: #007AFF !important;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+        
+        /* Stats section */
+        .stats-box {
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.3s ease;
+        }
+        
+        .stats-box:hover {
+            transform: translateY(-3px);
+        }
+        
+        .stats-number {
             font-size: 2.5rem;
-            color: #0d6efd;
-            margin-bottom: 1rem;
+            font-weight: 600;
+            color: #007AFF;
         }
-        .footer {
-            background-color: #343a40;
+        
+        /* Badge styling */
+        .industry-badge {
+            background-color: #f8f9fa;
+            color: #333;
+            font-weight: 500;
+            font-size: 0.8rem;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            display: inline-block;
+            transition: all 0.2s ease;
+        }
+        
+        .industry-badge:hover {
+            background-color: #007AFF;
             color: white;
-            padding: 30px 0;
+            transform: translateY(-2px);
         }
         
         /* Popup Modal Styles */
@@ -49,13 +144,14 @@
         
         .popup-content {
             background-color: white;
-            padding: 30px;
-            border-radius: 10px;
+            padding: 40px;
+            border-radius: 12px;
             max-width: 500px;
             width: 90%;
             position: relative;
             transform: scale(0.95);
             transition: transform 0.3s ease;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
         }
         
         .popup-overlay.show .popup-content {
@@ -64,298 +160,514 @@
         
         .popup-close {
             position: absolute;
-            top: 10px;
-            right: 15px;
+            top: 20px;
+            right: 25px;
             font-size: 24px;
             cursor: pointer;
             color: #6c757d;
+            transition: color 0.2s ease;
         }
         
         .popup-close:hover {
             color: #343a40;
+        }
+        
+        /* Navigation */
+        .navbar {
+            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .navbar-brand {
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            padding: 10px 16px !important;
+            transition: color 0.2s ease;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #f8f9fa;
+            color: #333;
+            padding: 60px 0 30px;
+        }
+        
+        /* Service cards */
+        .feature-icon {
+            font-size: 2rem;
+            color: #007AFF;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Forms */
+        .form-control {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            font-size: 1rem;
+        }
+        
+        .form-control:focus {
+            box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.25);
+            border-color: #007AFF;
+        }
+        
+        /* Accordion */
+        .accordion-button:not(.collapsed) {
+            background-color: #f8f9fa;
+            color: #007AFF;
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: #dee2e6;
+        }
+        
+        /* Hero gradient accent */
+        .hero-accent {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0,122,255,0.05) 0%, rgba(255,255,255,0) 70%);
+            top: -300px;
+            right: -300px;
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        /* Section titles */
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 50px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: #007AFF;
         }
     </style>
 </head>
 <body>
     <!-- Popup Modal -->
     <div class="popup-overlay" id="emailPopup">
-        <div class="popup-content shadow">
+        <div class="popup-content">
             <span class="popup-close" id="closePopup">&times;</span>
-            <h3 class="text-center mb-3">Get Your Free Cash Flow Analysis</h3>
-            <p class="text-center mb-4">Enter your information below to receive a complimentary analysis of your business cash flow.</p>
+            <h3 class="mb-4">Get a Free Financial Model Assessment</h3>
+            <p class="mb-4">Discover how our automated models can enhance your financial decision-making.</p>
             
-            <!-- Popup Form with Formspree - CORRECTED STRUCTURE -->
+            <!-- Popup Form with Formspree -->
             <form action="https://formspree.io/f/xjkyvnek" method="POST">
                 <div class="mb-3">
-                    <label for="popup-name" class="form-label">Your name:</label>
+                    <label for="popup-name" class="form-label">Full name</label>
                     <input type="text" class="form-control" id="popup-name" name="name" required>
                 </div>
                 <div class="mb-3">
-                    <label for="popup-email" class="form-label">Your email:</label>
+                    <label for="popup-email" class="form-label">Business email</label>
                     <input type="email" class="form-control" id="popup-email" name="email" required>
                 </div>
                 <div class="mb-3">
-                    <label for="popup-company" class="form-label">Your company:</label>
+                    <label for="popup-company" class="form-label">Company name</label>
                     <input type="text" class="form-control" id="popup-company" name="company">
                 </div>
                 <div class="mb-3">
-                    <label for="popup-message" class="form-label">Message (optional):</label>
-                    <textarea class="form-control" id="popup-message" name="message" rows="3"></textarea>
+                    <label for="popup-need" class="form-label">Primary financial need</label>
+                    <select class="form-control" id="popup-need" name="need">
+                        <option value="Forecasting">Cash Flow & P&L Forecasting</option>
+                        <option value="Contract Modeling">Contract Modeling & Analysis</option>
+                        <option value="Valuation">Business Valuation</option>
+                        <option value="Business Case">Business Case Development</option>
+                    </select>
                 </div>
                 <div class="d-grid">
-                    <button type="submit" class="btn btn-primary btn-lg">Get My Free Analysis</button>
+                    <button type="submit" class="btn btn-primary btn-lg">Request Free Assessment</button>
                 </div>
+                <p class="text-center small mt-3">Your information will never be shared with third parties.</p>
             </form>
         </div>
     </div>
 
     <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">AI-CFO</a>
+            <a class="navbar-brand" href="#top">AURIFLOW</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#features">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#benefits">Benefits</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-primary text-white" href="#interest-form">Get Started</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#approach">Methodology</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pricing">Packages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-2" href="#interest-form">Get Started</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="top">
+        <div class="hero-accent"></div>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-4">AI-Enhanced CFO Services for Your Business</h1>
-                    <p class="lead mb-4">Leverage cutting-edge AI technology and expert financial guidance to optimize your business finances, reduce costs, and drive growth.</p>
-                    <a href="#interest-form" class="btn btn-primary btn-lg">Get Early Access</a>
+                    <h1 class="display-4 mb-4">Financial intelligence, without the overhead</h1>
+                    <p class="lead mb-5">AURIFLOW delivers strategic finance services with advanced automation and AI, providing enterprise-grade financial modeling and forecasting for ambitious organizations.</p>
+                    
+                    <div class="d-flex flex-wrap mb-5">
+                        <span class="industry-badge me-2 mb-2">Cash Flow Forecasting</span>
+                        <span class="industry-badge me-2 mb-2">P&L Modeling</span>
+                        <span class="industry-badge me-2 mb-2">Contract Analysis</span>
+                        <span class="industry-badge me-2 mb-2">Valuation</span>
+                        <span class="industry-badge me-2 mb-2">Business Cases</span>
+                    </div>
+                    
+                    <div>
+                        <a href="#interest-form" class="btn btn-primary me-3">Schedule Consultation</a>
+                        <a href="#services" class="btn btn-outline-secondary">Explore Services</a>
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                    <!-- Updated with corrected GitHub Pages path -->
-                    <img src="https://mcraig001.github.io/finserv-landing1/images/pexels-sliceisop-2529179.jpg" alt="AI CFO Services" class="img-fluid rounded shadow">
+                <div class="col-lg-6 mt-5 mt-lg-0 text-center">
+                    <img src="https://placehold.co/600x400/f8f9fa/007AFF?text=Financial+Intelligence" alt="Strategic Finance Services" class="img-fluid rounded-3">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-4">
+                    <div class="stats-box text-center">
+                        <div class="stats-number">67%</div>
+                        <p class="mb-0">Of executives report challenges with accurate financial forecasting</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="stats-box text-center">
+                        <div class="stats-number">85%</div>
+                        <p class="mb-0">Of complex contracts lack comprehensive financial analysis</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="stats-box text-center">
+                        <div class="stats-number">3.5x</div>
+                        <p class="mb-0">ROI achieved from implementing strategic financial modeling</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="py-5">
+    <!-- Services Section -->
+    <section id="services" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Our AI-Powered Financial Services</h2>
+            <div class="text-start mb-5">
+                <h2 class="section-title">Strategic Finance Services</h2>
+                <p class="lead text-muted">Expert financial analysis and modeling, delivered through automated workflows</p>
+            </div>
+            
+            <!-- Forecasting Services -->
+            <h3 class="mb-4">Forecasting Services</h3>
+            <div class="row g-4 mb-5">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4 p-lg-5">
+                            <div class="feature-icon">💰</div>
+                            <h3 class="card-title">Cash Flow Forecasting</h3>
+                            <p class="card-text">Gain precision visibility into your future cash position with our automated 13-week rolling cash flow forecasts.</p>
+                            <h5 class="mt-4 mb-3">Deliverables:</h5>
+                            <ul class="text-start">
+                                <li>Automated weekly cash flow dashboard</li>
+                                <li>13-week rolling forecast with variance analysis</li>
+                                <li>Cash conversion cycle optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4 p-lg-5">
+                            <div class="feature-icon">📊</div>
+                            <h3 class="card-title">P&L Forecasting</h3>
+                            <p class="card-text">Transform your operational planning with our sophisticated P&L forecasting service.</p>
+                            <h5 class="mt-4 mb-3">Deliverables:</h5>
+                            <ul class="text-start">
+                                <li>12-month rolling P&L forecast with updates</li>
+                                <li>Driver-based revenue and expense modeling</li>
+                                <li>Scenario analysis (base, upside, downside)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modeling Services -->
+            <h3 class="mb-4">Financial Modeling Services</h3>
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body text-center">
-                            <div class="feature-icon">📊</div>
-                            <h3 class="card-title">Real-time Financial Analysis</h3>
-                            <p class="card-text">Get instant insights into your financial health with AI-driven analytics that process data in real-time.</p>
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">📝</div>
+                            <h3 class="card-title">Contract Modeling</h3>
+                            <p class="card-text">Strengthen your position in contract negotiations with sophisticated financial modeling.</p>
+                            <h5 class="mt-4 mb-3">Deliverables:</h5>
+                            <ul class="text-start">
+                                <li>Comprehensive contract financial model</li>
+                                <li>Sensitivity analysis on key terms</li>
+                                <li>Negotiation support and term optimization</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body text-center">
-                            <div class="feature-icon">🔮</div>
-                            <h3 class="card-title">Predictive Forecasting</h3>
-                            <p class="card-text">Leverage machine learning to predict future financial trends and prepare your business accordingly.</p>
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">💎</div>
+                            <h3 class="card-title">Valuation Modeling</h3>
+                            <p class="card-text">Understand your company's true worth with our rigorous valuation models.</p>
+                            <h5 class="mt-4 mb-3">Deliverables:</h5>
+                            <ul class="text-start">
+                                <li>DCF, comparable company analysis</li>
+                                <li>Multiple-based valuation dashboard</li>
+                                <li>Value driver sensitivity analysis</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body text-center">
-                            <div class="feature-icon">💰</div>
-                            <h3 class="card-title">Cost Optimization</h3>
-                            <p class="card-text">Identify savings opportunities and optimize expenses with AI-powered recommendations.</p>
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">🚀</div>
+                            <h3 class="card-title">Business Case Development</h3>
+                            <p class="card-text">Make data-driven investment decisions with our comprehensive business case models.</p>
+                            <h5 class="mt-4 mb-3">Deliverables:</h5>
+                            <ul class="text-start">
+                                <li>Financial model with ROI analysis</li>
+                                <li>NPV, IRR, and payback calculations</li>
+                                <li>Scenario and sensitivity analysis</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Benefits Section -->
-    <section id="benefits" class="py-5 bg-light">
+    
+    <!-- Our Approach Section -->
+    <section id="approach" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-5">Why Choose Our AI-CFO Services</h2>
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="d-flex align-items-start">
-                        <div class="flex-shrink-0 me-3">
-                            <span class="text-primary fw-bold display-6">01</span>
-                        </div>
-                        <div>
-                            <h3>Expert Financial Guidance + AI Precision</h3>
-                            <p class="lead">Combine human expertise with AI capabilities for unparalleled financial management.</p>
+            <div class="text-start mb-5">
+                <h2 class="section-title">Our Methodology</h2>
+                <p class="lead text-muted">How we leverage automation and AI to deliver superior financial intelligence</p>
+            </div>
+            
+            <div class="row mb-5">
+                <div class="col-md-6 mb-4 mb-md-0 text-center">
+                    <img src="https://placehold.co/500x300/f8f9fa/007AFF?text=Automated+Workflows" alt="Automated Workflows" class="img-fluid rounded-3">
+                </div>
+                <div class="col-md-6">
+                    <h3>1. Automated Workflows</h3>
+                    <p class="lead">We engineer automated data collection and processing systems that eliminate manual work and reduce human error.</p>
+                    <ul>
+                        <li>Custom data connectors for your financial systems</li>
+                        <li>Automated data validation and transformation</li>
+                        <li>Scheduled reporting and dashboard updates</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="row mb-5 flex-md-row-reverse">
+                <div class="col-md-6 mb-4 mb-md-0 text-center">
+                    <img src="https://placehold.co/500x300/f8f9fa/007AFF?text=Advanced+Modeling" alt="Advanced Modeling Techniques" class="img-fluid rounded-3">
+                </div>
+                <div class="col-md-6">
+                    <h3>2. Advanced Modeling Techniques</h3>
+                    <p class="lead">We apply sophisticated financial modeling methodologies enhanced by machine learning algorithms.</p>
+                    <ul>
+                        <li>Driver-based forecasting with dynamic inputs</li>
+                        <li>Monte Carlo simulations for risk assessment</li>
+                        <li>Multi-scenario modeling with probability weighting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-5">
+        <div class="container">
+            <div class="text-start mb-5">
+                <h2 class="section-title">Service Packages</h2>
+                <p class="lead text-muted">Flexible options designed to meet your specific financial requirements</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body p-4 p-lg-5">
+                            <h4 class="card-title">Forecasting Package</h4>
+                            <p class="text-primary fw-bold">Starting at $2,499/month</p>
+                            <hr>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">✓ 13-week cash flow forecasting</li>
+                                <li class="mb-2">✓ P&L forecasting and analysis</li>
+                                <li class="mb-2">✓ KPI dashboard setup</li>
+                                <li class="mb-2">✓ Monthly review sessions</li>
+                            </ul>
+                            <p class="mt-4"><strong>For:</strong> Companies seeking improved financial visibility</p>
+                            <div class="d-grid mt-4">
+                                <a href="#interest-form" class="btn btn-outline-primary">Get Started</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="d-flex align-items-start">
-                        <div class="flex-shrink-0 me-3">
-                            <span class="text-primary fw-bold display-6">02</span>
-                        </div>
-                        <div>
-                            <h3>Scalable Solutions for Any Business Size</h3>
-                            <p class="lead">Our services adapt to your business needs, whether you're a startup or established enterprise.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="d-flex align-items-start">
-                        <div class="flex-shrink-0 me-3">
-                            <span class="text-primary fw-bold display-6">03</span>
-                        </div>
-                        <div>
-                            <h3>Time & Cost Savings</h3>
-                            <p class="lead">Reduce the need for large financial teams while gaining enhanced insights and capabilities.</p>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100" style="border: 2px solid #007AFF;">
+                        <div class="card-body p-4 p-lg-5">
+                            <div class="ribbon text-center text-white bg-primary py-1 mb-4">MOST POPULAR</div>
+                            <h4 class="card-title">Modeling Package</h4>
+                            <p class="text-primary fw-bold">Starting at $3,999/month</p>
+                            <hr>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">✓ Contract financial modeling</li>
+                                <li class="mb-2">✓ Valuation analysis</li>
+                                <li class="mb-2">✓ Business case development</li>
+                                <li class="mb-2">✓ Scenario analysis</li>
+                            </ul>
+                            <p class="mt-4"><strong>For:</strong> Companies facing complex financial decisions</p>
+                            <div class="d-grid mt-4">
+                                <a href="#interest-form" class="btn btn-primary">Get Started</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="d-flex align-items-start">
-                        <div class="flex-shrink-0 me-3">
-                            <span class="text-primary fw-bold display-6">04</span>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body p-4 p-lg-5">
+                            <h4 class="card-title">Complete Package</h4>
+                            <p class="text-primary fw-bold">Starting at $5,999/month</p>
+                            <hr>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">✓ All Forecasting & Modeling services</li>
+                                <li class="mb-2">✓ Integrated financial planning system</li>
+                                <li class="mb-2">✓ Strategic finance advisory</li>
+                                <li class="mb-2">✓ Custom dashboard development</li>
+                            </ul>
+                            <p class="mt-4"><strong>For:</strong> Companies requiring comprehensive financial intelligence</p>
+                            <div class="d-grid mt-4">
+                                <a href="#interest-form" class="btn btn-outline-primary">Get Started</a>
+                            </div>
                         </div>
-                        <div>
-                            <h3>Data-Driven Decision Making</h3>
-                            <p class="lead">Make confident business decisions backed by comprehensive financial analysis.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>Need a single project? <a href="#interest-form">Contact us</a> for custom project-based solutions.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section id="faq" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-start mb-5">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item mb-3 border rounded">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    How does AURIFLOW differ from traditional financial consulting?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Unlike traditional consulting that relies on manual analysis and custom work for each client, we've developed automated workflows and standardized models that deliver consistent, high-quality financial intelligence at a fraction of the cost.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3 border rounded">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    How long does it take to implement your forecasting system?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Most clients are operational with our forecasting system within 2-3 weeks. The implementation process includes initial data collection, system configuration, historical data analysis, and dashboard setup.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3 border rounded">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Which systems do you integrate with for data collection?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our platform integrates with most popular accounting and ERP systems including QuickBooks, Xero, NetSuite, Sage, and Microsoft Dynamics. We also support custom data imports from Excel, CSV files, and other financial systems.
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Form Section - UPDATED WITH FORMSPREE -->
+    
+    <!-- Form Section -->
     <section id="interest-form" class="container py-5">
         <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card shadow">
-                    <div class="card-body">
-                        <h3 class="card-title text-center mb-4">Interested in AI-Enhanced CFO Services?</h3>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body p-4 p-lg-5">
+                        <h3 class="mb-4">Ready for Strategic Financial Intelligence?</h3>
+                        <p class="mb-4">Let's discuss how our services can transform your financial decision-making.</p>
                         
-                        <!-- Form with Formspree integration - CORRECTED STRUCTURE -->
+                        <!-- Form with Formspree integration -->
                         <form action="https://formspree.io/f/xjkyvnek" method="POST">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Your name:</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Your email:</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="company" class="form-label">Your company:</label>
-                                <input type="text" class="form-control" id="company" name="company">
-                            </div>
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Message (optional):</label>
-                                <textarea class="form-control" id="message" name="message" rows="3"></textarea>
-                            </div>
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h4>AI-CFO Services</h4>
-                    <p>Transforming financial management with artificial intelligence.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <p>© 2025 AI-CFO Services. All rights reserved.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Popup JavaScript - IMPROVED VERSION -->
-    <script>
-        // Function to show the popup
-        function showPopup() {
-            const popup = document.getElementById('emailPopup');
-            popup.classList.add('show');
-        }
-        
-        // Function to initialize popup events
-        function initPopup() {
-            const popup = document.getElementById('emailPopup');
-            const closeBtn = document.getElementById('closePopup');
-            
-            // Close popup when X is clicked
-            closeBtn.addEventListener('click', function() {
-                popup.classList.remove('show');
-            });
-            
-            // Close popup when clicking outside the content
-            popup.addEventListener('click', function(e) {
-                if (e.target === popup) {
-                    popup.classList.remove('show');
-                }
-            });
-            
-            // Check if we should show popup (based on cookie)
-            if (!getCookie('popupShown')) {
-                // Show popup after 3 seconds
-                setTimeout(showPopup, 3000);
-                // Set cookie to prevent showing popup again in this session
-                setCookie('popupShown', 'true', 1);
-            }
-        }
-        
-        // Cookie utility functions
-        function setCookie(name, value, days) {
-            let expires = "";
-            if (days) {
-                const date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toUTCString();
-            }
-            document.cookie = name + "=" + (value || "") + expires + "; path=/";
-        }
-        
-        function getCookie(name) {
-            const nameEQ = name + "=";
-            const ca = document.cookie.split(';');
-            for (let i = 0; i < ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-            }
-            return null;
-        }
-        
-        // Initialize when page is fully loaded
-        if (document.readyState === 'complete') {
-            initPopup();
-        } else {
-            // Use both load events for maximum compatibility
-            window.addEventListener('load', initPopup);
-            document.addEventListener('DOMContentLoaded', initPopup);
-        }
-    </script>
-</body>
-</html>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label">Your name</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Business email</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="company" class="form-label">Company name</label>
+                                    <input type="text" class="form-control" id="company" name="company">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">Phone number</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="need" class="form-label">What is your primary financial need?</label>
+                                    <select class="form-control" id="need" name="need" required>
+                                        <option value="" selected disabled>Select an option</option>
+                                        <option value="Cash Flow Forecasting">Cash Flow Forecasting</option>
+                                        <option value="P&L Forecasting">P&L Forecasting</option>
+                                        <option value="Contract Modeling">Contract Financial Modeling</option>
+                                        <option value="Valuation">Business Valuation</option>
+                                        <option value="Business Case">Business Case Development</option>
+                                        <option value="Other">Other (please specify)</option>
